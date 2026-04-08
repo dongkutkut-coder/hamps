@@ -1,0 +1,641 @@
+/* ====================================================
+   GLOBAL DESIGN ENHANCEMENTS - EVO Helmet Website
+   Only styles non-navbar elements. Navbar is untouched.
+   ==================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+    --accent: #00d4ff;
+    --accent-glow: rgba(0, 212, 255, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+}
+
+/* ── Base Body ── */
+body {
+    font-family: 'Outfit', sans-serif !important;
+    color: var(--text-main) !important;
+    background:
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.82)),
+        url("image/bg.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* ── Hero Section ── */
+.hero {
+    padding-top: 140px !important;
+}
+
+/* Animated hero text */
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem) !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    text-shadow: 0 0 30px var(--accent-glow), 2px 2px 8px rgba(0,0,0,0.5) !important;
+    color: #ffffff !important;
+    animation: heroFadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.hero p {
+    font-size: 1.1rem !important;
+    line-height: 1.8 !important;
+    color: #cbd5e1 !important;
+    font-weight: 300 !important;
+    animation: heroFadeIn 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+@keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Index page hero content box */
+.hero-content {
+    background: rgba(0, 0, 0, 0.45) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 20px !important;
+    padding: 40px !important;
+    box-shadow: var(--glass-shadow) !important;
+    color: var(--text-main) !important;
+    animation: heroFadeIn 0.9s ease-out forwards;
+    opacity: 0;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 4vw, 3rem) !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 20px var(--accent-glow) !important;
+    animation: heroFadeIn 0.9s ease-out 0.1s forwards;
+    opacity: 0;
+}
+
+.hero-content p {
+    color: #cbd5e1 !important;
+    animation: heroFadeIn 0.9s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+/* ── Buttons ── */
+.learn-more, .signup-btn {
+    font-family: 'Outfit', sans-serif !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    transition: all 0.3s ease !important;
+    padding: 12px 32px !important;
+}
+
+.learn-more {
+    color: #fff !important;
+    border: 2px solid var(--accent) !important;
+    background: transparent !important;
+}
+
+.learn-more:hover {
+    background: var(--accent) !important;
+    box-shadow: 0 6px 20px var(--accent-glow) !important;
+    transform: translateY(-2px) !important;
+}
+
+.signup-btn {
+    background: var(--accent) !important;
+    color: #0f172a !important;
+    border: 2px solid var(--accent) !important;
+    font-weight: 700 !important;
+}
+
+.signup-btn:hover {
+    background: transparent !important;
+    color: var(--accent) !important;
+    box-shadow: 0 6px 20px var(--accent-glow) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ── Feature Boxes ── */
+.box {
+    background: rgba(0, 0, 0, 0.55) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 16px !important;
+    padding: 30px !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    box-shadow: var(--glass-shadow) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.box:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 16px 40px rgba(0, 212, 255, 0.25) !important;
+    border-color: var(--accent) !important;
+}
+
+.box h3 {
+    color: var(--accent) !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+}
+
+.box p {
+    color: #cbd5e1 !important;
+    line-height: 1.6 !important;
+}
+
+/* ── Product Cards ── */
+.image-box {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    text-align: center;
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    backdrop-filter: blur(6px) !important;
+}
+
+.image-box:hover {
+    transform: translateY(-6px) scale(1.02) !important;
+    border-color: var(--accent) !important;
+    box-shadow: 0 12px 35px rgba(0, 212, 255, 0.25) !important;
+}
+
+.image-box img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+    transition: transform 0.4s ease !important;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.5));
+}
+
+.image-box:hover img {
+    transform: scale(1.08) !important;
+}
+
+.image-box p {
+    color: #e2e8f0 !important;
+    font-size: 1rem !important;
+    margin-top: 12px !important;
+    font-weight: 500 !important;
+}
+
+.image-box h2 {
+    color: var(--accent) !important;
+    font-size: 1.1rem !important;
+    margin-top: 6px !important;
+}
+
+/* ── Product Category Badge ── */
+.product-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #0f172a;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+/* ── Buy Now Button ── */
+.buy-now-btn {
+    display: inline-block;
+    margin-top: 12px;
+    background: var(--accent);
+    color: #0f172a !important;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 22px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+.buy-now-btn:hover {
+    background: transparent;
+    color: var(--accent) !important;
+    border: 2px solid var(--accent);
+    box-shadow: 0 6px 16px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+/* ── Product Click Description ── */
+.product-desc {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+    border-radius: 16px;
+}
+
+.product-desc p {
+    margin: 0 !important;
+    color: #e2e8f0 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+    text-align: center !important;
+}
+
+.product-desc::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 auto 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.image-box.show-description .product-desc {
+    bottom: 0;
+}
+
+/* ── Stats Section (Animated Counters) ── */
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 60px 40px;
+    background: rgba(0,0,0,0.3);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.stat-box {
+    text-align: center;
+    min-width: 150px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+    text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-top: 8px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* ── Timeline Section ── */
+.timeline-section {
+    padding: 60px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+.timeline-section h2 span {
+    color: var(--accent);
+}
+
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    top: 0;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: calc(50% + 30px);
+    margin-bottom: 40px;
+    position: relative;
+    animation: heroFadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: calc(50% + 30px);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    top: 16px;
+    left: calc(50% - 7px);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.timeline-content {
+    background: rgba(0,0,0,0.55);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    max-width: 300px;
+    backdrop-filter: blur(6px);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-content:hover {
+    border-color: var(--accent);
+    transform: scale(1.03);
+}
+
+.timeline-year {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.timeline-content p {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Staggered animation for timeline items */
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* ── Back to Top Button ── */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #0f172a;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px var(--accent-glow);
+    line-height: 1;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    background: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px var(--accent-glow);
+}
+
+/* ── Contact Page Resume Card ── */
+.container {
+    background: rgba(0, 0, 0, 0.55) !important;
+    backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 20px !important;
+    box-shadow: var(--glass-shadow) !important;
+    margin-top: 100px !important;
+    color: var(--text-main) !important;
+}
+
+/* ── Contact Form Section ── */
+.contact h1 { font-size: 2rem !important; color: #fff !important; font-weight: 700 !important; }
+.contact p  { color: #94a3b8 !important; }
+
+.contact input,
+.contact textarea {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 10px !important;
+    color: var(--text-main) !important;
+    padding: 14px 18px !important;
+    width: 100%;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 1rem !important;
+    transition: border-color 0.3s ease !important;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.15) !important;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder { color: #64748b !important; }
+
+.contact button,
+.contact form button {
+    font-family: 'Outfit', sans-serif !important;
+    background: var(--accent) !important;
+    color: #0f172a !important;
+    border: 2px solid var(--accent) !important;
+    border-radius: 30px !important;
+    padding: 14px 36px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    letter-spacing: 1px !important;
+}
+
+.contact button:hover,
+.contact form button:hover {
+    background: transparent !important;
+    color: var(--accent) !important;
+    box-shadow: 0 6px 20px var(--accent-glow) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ── Profile image ── */
+.profile img {
+    border-radius: 50% !important;
+    border: 4px solid var(--accent) !important;
+    box-shadow: 0 0 25px var(--accent-glow) !important;
+    transition: box-shadow 0.3s ease;
+}
+
+.profile img:hover {
+    box-shadow: 0 0 45px var(--accent-glow) !important;
+}
+
+/* ── Progress Bars ── */
+.progress {
+    background: rgba(255,255,255,0.1) !important;
+    border-radius: 8px !important;
+    height: 10px !important;
+    overflow: hidden !important;
+    margin-top: 6px !important;
+}
+
+.progress div {
+    height: 100% !important;
+    background: linear-gradient(90deg, var(--accent), #0099bb) !important;
+    border-radius: 8px !important;
+}
+
+/* ── Skill Pills ── */
+.skill-grid span {
+    background: rgba(0, 212, 255, 0.1) !important;
+    border: 1px solid rgba(0, 212, 255, 0.3) !important;
+    color: var(--accent) !important;
+    border-radius: 20px !important;
+    padding: 6px 16px !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    display: inline-block !important;
+    margin: 4px !important;
+    transition: all 0.2s ease !important;
+}
+
+.skill-grid span:hover {
+    background: var(--accent) !important;
+    color: #0f172a !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ── Footer ── */
+.site-footer {
+    margin-top: auto;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--glass-border);
+    padding: 32px 20px;
+    text-align: center;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 14px;
+}
+
+.footer-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px var(--accent-glow);
+}
+
+.footer-icon {
+    color: var(--text-muted);
+    font-size: 22px;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.footer-socials a:hover .footer-icon { color: #0f172a; }
+
+.footer-text {
+    color: #475569;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    margin: 0;
+    font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .timeline::before { left: 20px; }
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        justify-content: flex-start;
+        padding-right: 0;
+        padding-left: 50px;
+    }
+    .timeline-item::after { left: 13px; }
+    .stats-section { gap: 20px; padding: 40px 20px; }
+    .stat-number { font-size: 2.2rem; }
+}

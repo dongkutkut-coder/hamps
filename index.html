@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVO Helmets Landing Page</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="image/logo.png" alt="EVO Helmet" style="height: 85px; display: block; filter: drop-shadow(0 0 10px rgba(0,240,255,0.4)); transition: 0.3s; cursor: pointer;">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+
+            <li class="dropdown">
+                <a href="#">PRODUCT</a>
+                <ul class="dropdown-menu">
+                    <li><a href="fullface.html">Full Face</a></li>
+                    <li><a href="halfface.html">Half Face</a></li>
+                    <li><a href="limit.html">Limited Edition</a></li>
+                </ul>
+            </li>
+
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <main class="hero">
+        <!-- Background Aesthetic Elements -->
+        <div class="mesh-gradient mesh-red"></div>
+        <div class="mesh-gradient mesh-blue"></div>
+        <div class="spotlight"></div>
+
+        <!-- Large Helmet 3D Feature -->
+        <div class="hero-image">
+            <script src="model-data.js"></script>
+            <model-viewer 
+                id="my-helmet-viewer"
+                alt="EVO 3D Helmet Featured" 
+                auto-rotate 
+                auto-rotate-delay="0"
+                rotation-per-second="20deg"
+                camera-controls 
+                interaction-prompt="hover"
+                shadow-intensity="1.5"
+                environment-image="neutral"
+                exposure="1.2"
+                style="width: 500px; height: 500px; filter: drop-shadow(0 0 30px rgba(0, 240, 255, 0.5)); cursor: grab;">
+            </model-viewer>
+            <script>
+                // Instantly inject the 25MB helmet locally without setting off Chrome's file:/// block
+                document.getElementById('my-helmet-viewer').src = helmetBase64;
+            </script>
+        </div>
+
+        <!-- Main Content -->
+        <div class="hero-content">
+            <div class="subtitle-badge">PREMIUM PROTECTION</div>
+            <h1>RIDE <span class="gradient-text">FEARLESS.</span><br>BE PROTECTED.</h1>
+            <p>Experience the ultimate fusion of aerodynamics, aggressive styling, and uncompromising safety.</p>
+
+            <!-- Buttons -->
+            <div class="hero-buttons">
+                <a href="#explore" class="signup-btn">EXPLORE FEATURES</a>
+                <a href="fullface.html" class="learn-more">SHOP NOW</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Small Index Footer -->
+    <div style="position: absolute; bottom: 20px; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; z-index: 20;">
+        <div>
+            <p style="color: rgba(255,255,255,0.4); font-size: 0.75rem; letter-spacing: 1px;">&copy; 2026 EVO Helmets.</p>
+            <p style="color: rgba(255,255,255,0.25); font-size: 0.65rem; letter-spacing: 1px; margin-top: 3px;">This website is for academic purposes only.</p>
+        </div>
+        <div style="display: flex; gap: 15px;">
+            <a href="https://www.facebook.com/edgar.alva.2024" target="_blank" style="text-decoration: none;"><i class="fa-brands fa-facebook-f" style="color: rgba(255,255,255,0.6); font-size: 1.1rem; cursor: pointer; transition: 0.3s;" onmouseover="this.style.color='#00f0ff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"></i></a>
+            <a href="https://www.instagram.com/_yakultzzzzz?igsh=OHA2bDN0NzZoNWd6" target="_blank" style="text-decoration: none;"><i class="fa-brands fa-instagram" style="color: rgba(255,255,255,0.6); font-size: 1.1rem; cursor: pointer; transition: 0.3s;" onmouseover="this.style.color='#00f0ff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"></i></a>
+            <a href="https://www.tiktok.com/@blueeeeees?_r=1&_t=ZS-94rfSxIc5jA" target="_blank" style="text-decoration: none;"><i class="fa-brands fa-tiktok" style="color: rgba(255,255,255,0.6); font-size: 1.1rem; cursor: pointer; transition: 0.3s;" onmouseover="this.style.color='#00f0ff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"></i></a>
+        </div>
+    </div>
+
+    <!-- Vanilla Tilt Script for 3D Hover Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- 3D Model Viewer Component -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    
+    <!-- Smooth Scrolling (Lenis) -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+    </script>
+</body>
+</html>

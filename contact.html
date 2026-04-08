@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evo Helmet | Contact</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="image/logo.png" alt="EVO Helmet"
+                style="height: 85px; display: block; filter: drop-shadow(0 0 10px rgba(0,240,255,0.4)); transition: 0.3s; cursor: pointer;">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+
+            <li class="dropdown">
+                <a href="#">PRODUCT</a>
+                <ul class="dropdown-menu">
+                    <li><a href="fullface.html">Full Face</a></li>
+                    <li><a href="halfface.html">Half Face</a></li>
+                    <li><a href="limit.html">Limited Edition</a></li>
+                </ul>
+            </li>
+
+            <li><a href="contact.html" class="active">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Center Layout -->
+    <main style="padding: 140px 5% 60px 5%; display: block; min-height: 100vh; position: relative; z-index: 10;">
+        <!-- Background Aesthetic Elements -->
+        <div class="mesh-gradient mesh-blue"
+            style="width: 800px; height: 800px; right: -10%; top: -10%; background: radial-gradient(circle, rgba(0,240,255,0.05) 0%, transparent 60%);">
+        </div>
+        <div class="mesh-gradient mesh-blue" style="width: 800px; height: 800px; left: -10%; bottom: -10%;"></div>
+        <div class="spotlight"></div>
+
+        <!-- Flex Container for Centered Layout -->
+        <div
+            style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1200px; margin: 0 auto;">
+
+            <!-- Contact Form Block -->
+            <div class="content-pane" style="flex: 1; min-width: 320px; max-width: 550px; height: auto;">
+                <h1 style="font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; text-transform: uppercase;">CONTACT
+                    <span style="color: #00f0ff;">US</span>
+                </h1>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 30px; font-size: 0.95rem;">
+                    Have questions or need assistance? Fill out the form below or reach out to us directly.
+                </p>
+
+                <!-- Contact Details -->
+                <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 30px;">
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 15px 20px; border-radius: 8px; flex: 1; min-width: 180px; border-left: 3px solid #00f0ff;">
+                        <i class="fa-solid fa-envelope"
+                            style="color: #00f0ff; margin-bottom: 8px; font-size: 1.2rem;"></i>
+                        <p style="font-size: 0.85rem; color: #fff;">edgaronalva@gmail.com</p>
+                    </div>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 15px 20px; border-radius: 8px; flex: 1; min-width: 180px; border-left: 3px solid #fff;">
+                        <i class="fa-solid fa-phone" style="color: #fff; margin-bottom: 8px; font-size: 1.2rem;"></i>
+                        <p style="font-size: 0.85rem; color: #fff;">+639934830117</p>
+                    </div>
+                </div>
+
+                <form action="#" method="post" class="neon-form">
+                    <style>
+                        .neon-form input,
+                        .neon-form textarea {
+                            width: 100%;
+                            padding: 12px 15px;
+                            margin-bottom: 15px;
+                            background: rgba(255, 255, 255, 0.05);
+                            border: 1px solid rgba(255, 255, 255, 0.2);
+                            border-radius: 8px;
+                            color: #fff;
+                            font-family: 'Outfit', sans-serif;
+                        }
+
+                        .neon-form input:focus,
+                        .neon-form textarea:focus {
+                            outline: none;
+                            border-color: #00f0ff;
+                            background: rgba(0, 240, 255, 0.05);
+                        }
+
+                        .neon-form button {
+                            width: 100%;
+                            padding: 15px;
+                            background: linear-gradient(45deg, #00f0ff, #0080ff);
+                            border: none;
+                            border-radius: 8px;
+                            color: #fff;
+                            font-weight: bold;
+                            font-size: 1.1rem;
+                            cursor: pointer;
+                            transition: 0.3s;
+                        }
+
+                        .neon-form button:hover {
+                            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+                            transform: translateY(-2px);
+                        }
+                    </style>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Developer Portfolio Block -->
+            <div style="flex: 1; min-width: 320px; max-width: 550px;">
+                <style>
+                    .portfolio-card {
+                        background: rgba(15, 15, 18, 0.6);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 16px;
+                        padding: 25px;
+                        margin-bottom: 25px;
+                        backdrop-filter: blur(10px);
+                    }
+
+                    .portfolio-card h2 {
+                        color: #fff;
+                        font-size: 1.05rem;
+                        margin-bottom: 15px;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                        padding-bottom: 10px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                    }
+                </style>
+
+                <!-- Developer Profile Intro -->
+                <div class="portfolio-card" style="text-align: center; border-top: 4px solid #00f0ff;">
+                    <img src="image/edgar.jpg" alt="Profile"
+                        style="width: 300px; height: 300px; border-radius: 50%; border: 4px solid #00f0ff; margin-bottom: 15px; object-fit: cover; box-shadow: 0 15px 50px rgba(0,240,255,0.5);">
+                    <h1 style="font-size: 1.6rem; margin-bottom: 5px;">ALVA EDGAR L.</h1>
+                    <p style="color: #00f0ff; margin-bottom: 15px; font-weight: 500; font-size: 0.9rem;">Web Content
+                        Manager / Developer</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">Dedicated and simple professional. My
+                        hobbies are sketching, playing basketball, and playing guitar.</p>
+                </div>
+
+                <!-- Education & Experience -->
+                <div class="portfolio-card" style="border-left: 4px solid #fff;">
+                    <h2>WORK EXPERIENCE & EDUCATION</h2>
+
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 5px;">Salford Studio</h3>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 5px;">Web Content
+                            Manager | 2018 - Present</p>
+                        <ul style="color: rgba(255,255,255,0.8); font-size: 0.9rem; padding-left: 20px;">
+                            <li>Website design and database administration</li>
+                            <li>Develop the back end for scalable platforms</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 5px;">Innovative College of Science &
+                            Technology</h3>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 5px;">Accountancy,
+                            Business and Management | 2012 - 2019</p>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="portfolio-card" style="border-left: 4px solid #00f0ff;">
+                    <h2>PERSONAL SKILLS</h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span
+                            style="background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Communication</span>
+                        <span
+                            style="background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Time
+                            Management</span>
+                        <span
+                            style="background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Problem
+                            Solving</span>
+                        <span
+                            style="background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Web
+                            Design</span>
+                        <span
+                            style="background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Adaptability</span>
+                    </div>
+                </div>
+
+                <!-- Language Expertise -->
+                <div class="portfolio-card" style="border-left: 4px solid #fff;">
+                    <h2>LANGUAGE EXPERTISE</h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span
+                            style="background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">English</span>
+                        <span
+                            style="background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Tagalog</span>
+                        <span
+                            style="background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Bisaya</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Aesthetic Footer -->
+    <footer class="site-footer">
+        <h2 class="footer-logo">EVO <span style="color:#00f0ff;">HELMET</span></h2>
+        <p class="footer-tagline">Evolution Never Stops.</p>
+        <div class="footer-socials">
+            <a href="https://www.facebook.com/edgar.alva.2024" target="_blank" style="text-decoration: none;"><span
+                    class="social-icon-wrapper"><i class="fa-brands fa-facebook-f"></i></span></a>
+            <a href="https://www.instagram.com/_yakultzzzzz?igsh=OHA2bDN0NzZoNWd6" target="_blank"
+                style="text-decoration: none;"><span class="social-icon-wrapper"><i
+                        class="fa-brands fa-instagram"></i></span></a>
+            <a href="https://www.tiktok.com/@blueeeeees?_r=1&_t=ZS-94rfSxIc5jA" target="_blank"
+                style="text-decoration: none;"><span class="social-icon-wrapper"><i
+                        class="fa-brands fa-tiktok"></i></span></a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EVO Helmets. All Rights Reserved.</p>
+            <p style="margin-top: 8px; color: rgba(255,255,255,0.35); font-size: 0.75rem; letter-spacing: 1px;">This
+                website is for academic purposes only.</p>
+        </div>
+    </footer>
+
+    <!-- Smooth Scrolling (Lenis) -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+    </script>
+</body>
+
+</html>
